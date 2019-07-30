@@ -1,5 +1,30 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## To recreate
+
+Execute:
+
+    $ npx create-react-app enzyme-redux-attempt1 --typescript
+    $ cd enzyme-redux-attempt1
+    $ npm install --save react-redux
+    $ npm install --save-dev enzyme @types/enzyme
+    $ npm install --save-dev enzyme-adapter-react-16 @types/enzyme-adapter-react-16
+    $ npm install --save-dev enzyme-redux @types/enzyme-redux
+    $ npm install --save-dev redux-test-utils @types/redux-test-utils
+
+Create file `src/setupTests.ts`:
+
+    import { configure } from "enzyme";
+    import Adapter from "enzyme-adapter-react-16";
+    configure({ adapter: new Adapter() });
+
+Replace file `App.test.ts` with the contents of the __mountWithStore__ example from the
+[enzyme-redux documentation](https://github.com/knegusen/enzyme-redux).
+
+Execute:
+
+    $ npm test
+
 ## Available Scripts
 
 In the project directory, you can run:
